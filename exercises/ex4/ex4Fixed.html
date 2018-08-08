@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <a id="anchor" href="//www.overstock.com/search?keywords=blue+rug&SearchType=Header&id=4">hello</a>
+  <div id="object"></div>
+  <script>
+    let answer = {}
+    let anchor = document.getElementById('anchor').href
+    anchor = anchor.split('?')
+    anchor = anchor[1].split('&')
+    anchor.map(e => {
+      e = e.split('=')
+      answer[e[0]] = e[1]
+    })
+
+    document.getElementById('object').innerText = JSON.stringify(answer);
+  </script>
+</body>
+</html>
